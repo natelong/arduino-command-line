@@ -2,8 +2,9 @@
 # https://github.com/maik/pragpub/blob/53abf772e5525fc62ef3c96b798d9cdb331f8a26/hacking_arduino/part1/Makefile.master
 
 # Build Settings
-BUILD_DIR = build
-SKETCH    = demo
+ARDUINO_DIR = ../arduino-1.0.6
+BUILD_DIR   = build
+SKETCH      = demo
 
 # Board Settings
 # Board info: ./arduino-xxx/hardware/arduino/boards.txt 
@@ -27,14 +28,13 @@ MONITOR = ./tools/putty/putty.exe
 BAUD    = 9600
 
 # Arduino Environment
-ARD_HOME     = ../arduino-1.0.6
-AVR_HOME     = $(ARD_HOME)/hardware/tools/avr
+AVR_HOME     = $(ARDUINO_DIR)/hardware/tools/avr
 ARD_BIN      = $(AVR_HOME)/bin
 AVRDUDE      = $(ARD_BIN)/avrdude
 AVRDUDE_CONF = $(AVR_HOME)/etc/avrdude.conf
 
 # ARD Settings
-ARD_SRC_DIR = $(ARD_HOME)/hardware/arduino/cores/arduino
+ARD_SRC_DIR = $(ARDUINO_DIR)/hardware/arduino/cores/arduino
 ARD_MAIN    = $(ARD_SRC_DIR)/main.cpp
 
 # Build Tools
